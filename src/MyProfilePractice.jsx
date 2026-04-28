@@ -13,7 +13,7 @@ const Profile = ({ name, age, hobby, message,onDelete }) => {
             <p>趣味: {hobby}</p>     {/* 趣味を表示 */}
             <p>{message}</p>         {/* メッセージを表示 */}
             <button onClick ={() => setCurrentAge(currentAge + 1)}>年齢を増やす</button>
-            <button onClick = {onDelete}>削除</button>
+            <button onClick = {onDelete}></button>
         </div>
     )
 }

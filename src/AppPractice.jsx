@@ -25,22 +25,21 @@ function App() {
     {id:2,name:'真中',age:'25',hobby:'HIPHOP'},
     {id:3,name:'まな',age:'23',hobby:'HIPHOP'},
   ])
-  const [hobby,setHobby] = useState('')
   const addStudent = () =>{
-    if (name === '' || hobby ==='')return;
+    if (name === '')return;
     const newStudent = {
       id:students.length + 1,
       name: name,
       age: 20,
-      hobby:hobby,
+      hobby:'勉強中です',
     };
     setStudents([...students,newStudent]);
+
     setName('');
-    setHobby('');
   }
   const deleteStudent = (id) =>{
-    const newStudents = students.filter((student) => student.id !== id);
-    setStudents(newStudents);
+    const newStudent = students.filter((student) => student.id !== id);
+    setStudent (newStudent);
   }
 
 
@@ -55,9 +54,7 @@ function App() {
       <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: '20px' }}>
         <NameInput
           name={name}
-          hobby={hobby}
           handleNameChange={handleNameChange}
-          handleHobbyChange={(e) => setHobby(e.target.value)}
           handleReset={handleReset}
         />
         <button onClick={() => addStudent()}>新しく追加</button>
